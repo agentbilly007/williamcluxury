@@ -287,6 +287,46 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 
+/* ── PRESS BAR ── */
+.press-bar {
+  background: var(--off-white);
+  padding: 3rem 0;
+  border-top: 1px solid var(--gray-light);
+}
+.press-inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.press-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.press-tv {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--white);
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--gray-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.press-tv img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.press-tv-caption { display: flex; flex-direction: column; gap: 0.25rem; }
+.press-tv-caption strong { font-size: 0.82rem; color: var(--black); }
+.press-tv-caption span { font-size: 0.72rem; color: var(--gray-mid); font-style: italic; }
+
 /* ── ABOUT ── */
 .about { background: var(--off-white); }
 .about-grid {
