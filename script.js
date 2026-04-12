@@ -23,26 +23,38 @@ function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contact-form');
   const success = document.getElementById('form-success');
+  const btn = form.querySelector('button[type="submit"]');
 
-  // Collect form data
-  const data = {
-    first: form.fname.value,
-    last: form.lname.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    interest: form.interest.value,
-    message: form.message.value
-  };
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
 
-  // TODO: Replace with your form backend (Formspree, Netlify Forms, etc.)
-  // Example Formspree: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: JSON.stringify(data), headers:{'Content-Type':'application/json'} })
+  const data = new FormData(form);
 
-  console.log('Form submission:', data);
-
-  // Show success message
-  form.reset();
-  success.style.display = 'block';
-  setTimeout(() => { success.style.display = 'none'; }, 6000);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      form.reset();
+      success.style.display = 'block';
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      setTimeout(() => { success.style.display = 'none'; }, 8000);
+    } else {
+      res.json().then(data => {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        alert('There was a problem sending your message. Please call or email directly.');
+      });
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('There was a problem sending your message. Please call or email directly.');
+  });
 }
 
 // ── INTERSECTION OBSERVER: fade-in on scroll ──
