@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agentbilly007.github.io/williamcluxury/sitemap.xml

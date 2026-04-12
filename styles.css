@@ -697,6 +697,109 @@ a { text-decoration: none; color: inherit; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
+/* ── VIDEO SECTION ── */
+.video-section { background: var(--black); }
+.video-section .section-eyebrow,
+.video-section .section-title,
+.video-section .section-desc { color: var(--white); }
+.video-section .section-desc { color: rgba(255,255,255,0.5); }
+.video-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.video-embed-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: var(--black-mid);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.video-embed-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.video-cta-panel h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 1rem; }
+.video-cta-panel p { color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+.video-social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── MORTGAGE CALCULATOR ── */
+.calculator-section { background: var(--off-white); }
+.calc-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.calc-inputs { display: flex; flex-direction: column; gap: 1.25rem; }
+.calc-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.calc-group label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-dark); }
+.calc-input-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  transition: border-color var(--transition);
+}
+.calc-input-wrap:focus-within { border-color: var(--gold); }
+.calc-input-wrap input,
+.calc-input-wrap select {
+  flex: 1;
+  padding: 0.75rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--black);
+  appearance: none;
+}
+.calc-prefix, .calc-suffix {
+  padding: 0 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-mid);
+  flex-shrink: 0;
+}
+.calc-input-row { display: flex; gap: 0.75rem; }
+.calc-input-row .calc-input-wrap { flex: 1; }
+.calc-input-row .calc-input-wrap.narrow { flex: 0 0 100px; }
+.calc-results {
+  background: var(--black);
+  padding: 2.5rem;
+  position: sticky;
+  top: 100px;
+}
+.calc-result-main {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.calc-result-label { display: block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.calc-result-amount { font-family: var(--font-serif); font-size: 3.5rem; color: var(--white); line-height: 1; }
+.calc-breakdown { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+.breakdown-item { display: flex; justify-content: space-between; align-items: center; }
+.breakdown-item span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.breakdown-item strong { font-size: 0.85rem; color: var(--white); font-weight: 500; }
+.breakdown-item.total-row { padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.breakdown-item.total-row strong { color: var(--gold); font-size: 1rem; font-weight: 700; }
+.calc-loan-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.04);
+  margin-bottom: 0.5rem;
+}
+.loan-item { display: flex; justify-content: space-between; }
+.loan-item span { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+.loan-item strong { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
+
 @media (max-width: 768px) {
   .section { padding: 4rem 0; }
   .nav-links {
@@ -723,4 +826,7 @@ a { text-decoration: none; color: inherit; }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
   .footer-social { justify-content: flex-start; }
+  .video-grid { grid-template-columns: 1fr; }
+  .calc-wrap { grid-template-columns: 1fr; }
+  .calc-results { position: static; }
 }

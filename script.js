@@ -57,6 +57,64 @@ function handleSubmit(e) {
   });
 }
 
+// ── MORTGAGE CALCULATOR ──
+function formatCurrency(n) {
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+
+function calcMortgage() {
+  const price = parseFloat(document.getElementById('home-price')?.value) || 0;
+  const down = parseFloat(document.getElementById('down-payment')?.value) || 0;
+  const rate = parseFloat(document.getElementById('interest-rate')?.value) || 0;
+  const term = parseInt(document.getElementById('loan-term')?.value) || 30;
+  const tax = parseFloat(document.getElementById('property-tax')?.value) || 0;
+  const ins = parseFloat(document.getElementById('insurance')?.value) || 0;
+
+  const loan = Math.max(0, price - down);
+  const monthlyRate = rate / 100 / 12;
+  const n = term * 12;
+  let pi = 0;
+  if (monthlyRate > 0 && loan > 0) {
+    pi = loan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+  }
+  const monthlyTax = tax / 12;
+  const monthlyIns = ins / 12;
+  const total = pi + monthlyTax + monthlyIns;
+  const totalInterest = (pi * n) - loan;
+
+  document.getElementById('res-pi').textContent = formatCurrency(pi);
+  document.getElementById('res-tax').textContent = formatCurrency(monthlyTax);
+  document.getElementById('res-ins').textContent = formatCurrency(monthlyIns);
+  document.getElementById('res-total').textContent = formatCurrency(total);
+  document.getElementById('monthly-total').textContent = formatCurrency(total);
+  document.getElementById('res-loan').textContent = formatCurrency(loan);
+  document.getElementById('res-interest').textContent = formatCurrency(Math.max(0, totalInterest));
+}
+
+// Sync down payment $ and %
+function syncDown(source) {
+  const price = parseFloat(document.getElementById('home-price').value) || 0;
+  if (source === 'amount') {
+    const amt = parseFloat(document.getElementById('down-payment').value) || 0;
+    document.getElementById('down-pct').value = price > 0 ? (amt / price * 100).toFixed(1) : 0;
+  } else {
+    const pct = parseFloat(document.getElementById('down-pct').value) || 0;
+    document.getElementById('down-payment').value = Math.round(price * pct / 100);
+  }
+  calcMortgage();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const calcInputs = ['home-price', 'interest-rate', 'loan-term', 'property-tax', 'insurance'];
+  calcInputs.forEach(id => {
+    document.getElementById(id)?.addEventListener('input', calcMortgage);
+  });
+  document.getElementById('down-payment')?.addEventListener('input', () => syncDown('amount'));
+  document.getElementById('down-pct')?.addEventListener('input', () => syncDown('pct'));
+  document.getElementById('home-price')?.addEventListener('input', () => syncDown('pct'));
+  calcMortgage();
+});
+
 // ── INTERSECTION OBSERVER: fade-in on scroll ──
 const fadeEls = document.querySelectorAll('.stat, .listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid');
 const observer = new IntersectionObserver((entries) => {
