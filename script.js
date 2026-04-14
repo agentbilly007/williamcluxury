@@ -115,6 +115,50 @@ document.addEventListener('DOMContentLoaded', () => {
   calcMortgage();
 });
 
+// ── EXIT INTENT POPUP ──
+(function() {
+  // Only show on main pages, not home-value page itself
+  if (window.location.pathname.includes('home-value')) return;
+
+  let shown = false;
+  let timeOnPage = 0;
+  const timer = setInterval(() => { timeOnPage++; }, 1000);
+
+  function showPopup() {
+    if (shown) return;
+    shown = true;
+    clearInterval(timer);
+    const popup = document.getElementById('exit-popup');
+    if (popup) popup.classList.add('active');
+  }
+
+  // Desktop: mouse leaves top of browser
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 10 && timeOnPage >= 15) showPopup();
+  });
+
+  // Mobile: back button / scroll up aggressively
+  let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', function() {
+    const currentY = window.scrollY;
+    if (lastScrollY - currentY > 80 && currentY < 200 && timeOnPage >= 20) showPopup();
+    lastScrollY = currentY;
+  });
+
+  // Close handlers
+  document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.getElementById('exit-popup-close');
+    const overlay = document.getElementById('exit-popup');
+    if (closeBtn) closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+    if (overlay) overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) overlay.classList.remove('active');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') overlay && overlay.classList.remove('active');
+    });
+  });
+})();
+
 // ── INTERSECTION OBSERVER: fade-in on scroll ──
 const fadeEls = document.querySelectorAll('.stat, .listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid');
 const observer = new IntersectionObserver((entries) => {
