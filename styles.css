@@ -830,3 +830,44 @@ a { text-decoration: none; color: inherit; }
   .calc-wrap { grid-template-columns: 1fr; }
   .calc-results { position: static; }
 }
+
+/* ============================================
+   FLOATING CONTACT BUTTONS
+   ============================================ */
+.float-contact {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  z-index: 9999;
+}
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.float-sms {
+  background: var(--gold);
+  color: var(--black);
+}
+.float-call {
+  background: var(--black);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
