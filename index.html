@@ -189,47 +189,53 @@
     <div class="container">
       <p class="section-eyebrow center">Find Your Home</p>
       <h2 class="section-title center">Search Las Vegas<br />Properties</h2>
-      <p class="section-desc center">Live MLS data — every active listing in Las Vegas, Henderson, and Summerlin. Sign up free to save your favorites and get instant alerts when new homes match your criteria.</p>
+      <p class="section-desc center">Every active listing in Las Vegas, Henderson, and Summerlin — updated in real time from the MLS.</p>
 
-      <!-- Quick neighborhood links -->
-      <div class="search-quick-links">
-        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="quick-link-btn">Summerlin</a>
-        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="quick-link-btn">Henderson</a>
-        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="quick-link-btn">Las Vegas</a>
-        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="quick-link-btn">New Construction</a>
+      <!-- Search bar -->
+      <div class="search-bar-wrap">
+        <form class="search-bar-form" onsubmit="openMLS(event)">
+          <input type="text" id="mlsSearchInput" class="search-bar-input" placeholder="City, zip code, or neighborhood..." autocomplete="off" />
+          <button type="submit" class="search-bar-btn">Search Homes</button>
+        </form>
       </div>
 
-      <!-- IDX EMBED — MLS Matrix -->
-      <div class="idx-embed-wrap">
-        <div class="idx-embed-tip">Use the search bar above the results to filter by city, zip code, or price. Sign up free to save homes and get new listing alerts.</div>
-        <iframe
-          src="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97"
-          width="100%"
-          frameborder="0"
-          style="min-height:900px;border:none;display:block;width:100%;"
-          title="Las Vegas MLS Property Search"
-        ></iframe>
+      <!-- Browse by area -->
+      <div class="search-area-cards">
+        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="area-card summerlin-card">
+          <div class="area-card-overlay"></div>
+          <div class="area-card-content">
+            <h3>Summerlin</h3>
+            <p>Master-planned luxury living</p>
+          </div>
+        </a>
+        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="area-card henderson-card">
+          <div class="area-card-overlay"></div>
+          <div class="area-card-content">
+            <h3>Henderson</h3>
+            <p>Award-winning community</p>
+          </div>
+        </a>
+        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="area-card lasvegas-card">
+          <div class="area-card-overlay"></div>
+          <div class="area-card-content">
+            <h3>Las Vegas</h3>
+            <p>High-rise, guard-gated & more</p>
+          </div>
+        </a>
       </div>
 
-      <div class="search-features">
-        <div class="search-feature">
-          <div class="feature-icon">🔔</div>
-          <h4>Instant Alerts</h4>
-          <p>Get notified the second a home matching your criteria hits the market.</p>
-        </div>
-        <div class="search-feature">
-          <div class="feature-icon">📍</div>
-          <h4>Map Search</h4>
-          <p>Search by neighborhood, zip code, school district, or draw your own boundary.</p>
-        </div>
-        <div class="search-feature">
-          <div class="feature-icon">📊</div>
-          <h4>Market Data</h4>
-          <p>See days on market, price history, and neighborhood trends for any listing.</p>
-        </div>
+      <div class="search-cta-row">
+        <a href="https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97" target="_blank" class="btn btn-gold">Browse All Listings</a>
       </div>
     </div>
   </section>
+
+  <script>
+  function openMLS(e) {
+    e.preventDefault();
+    window.open('https://las.mlsmatrix.com/Matrix/public/IDX.aspx?idx=1ac0d97', '_blank');
+  }
+  </script>
 
   <!-- FEATURED LISTINGS -->
   <section class="listings section" id="listings">
