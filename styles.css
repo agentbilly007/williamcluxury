@@ -395,6 +395,21 @@ a { text-decoration: none; color: inherit; }
 .search-section { background: var(--black-soft); }
 .search-section .section-eyebrow, .search-section .section-title, .search-section .section-desc { color: var(--white); }
 .search-section .section-desc { color: rgba(255,255,255,0.6); }
+.idx-embed-wrap {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.idx-embed-wrap iframe {
+  width: 100%;
+  min-height: 800px;
+  display: block;
+  border: none;
+}
+@media (max-width: 768px) {
+  .idx-embed-wrap iframe { min-height: 600px; }
+}
 .idx-placeholder {
   border: 1px solid rgba(201,168,76,0.25);
   background: rgba(255,255,255,0.03);
