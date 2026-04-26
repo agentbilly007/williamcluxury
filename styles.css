@@ -500,11 +500,11 @@ a { text-decoration: none; color: inherit; }
 .idx-embed-wrap iframe {
   display: block;
   width: 100%;
-  min-height: 800px;
+  min-height: 1000px;
   border: none;
 }
 @media (max-width: 768px) {
-  .idx-embed-wrap iframe { min-height: 600px; }
+  .idx-embed-wrap iframe { min-height: 700px; }
 }
 .idx-placeholder {
   border: 1px solid rgba(201,168,76,0.25);
