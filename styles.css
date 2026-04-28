@@ -558,9 +558,9 @@ a { text-decoration: none; color: inherit; }
   background-size: cover;
   background-position: center;
 }
-.listing-img-1 { background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=70'); }
-.listing-img-2 { background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=70'); }
-.listing-img-3 { background-image: url('https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=600&q=70'); }
+.listing-img-1 { background-image: url('https://dlajgvw9htjpb.cloudfront.net/cms/8056a46e-484c-4a61-82f3-c8cda3616034/2746285/-6053126923156356048.jpg'); }
+.listing-img-2 { background-image: url('https://dlajgvw9htjpb.cloudfront.net/cms/8056a46e-484c-4a61-82f3-c8cda3616034/2767257/518083794612314639.jpg'); }
+.listing-img-3 { background-image: url('https://dlajgvw9htjpb.cloudfront.net/cms/8056a46e-484c-4a61-82f3-c8cda3616034/2752174/6286473527218176353.jpg'); }
 .listing-status {
   position: absolute;
   top: 1rem;
