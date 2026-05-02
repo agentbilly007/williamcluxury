@@ -160,20 +160,55 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ── INTERSECTION OBSERVER: fade-in on scroll ──
-const fadeEls = document.querySelectorAll('.stat, .listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid');
+const fadeEls = document.querySelectorAll('.listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid, .blog-card, .area-card');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      setTimeout(() => {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }, i * 80);
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 fadeEls.forEach(el => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
   observer.observe(el);
 });
+
+// ── ANIMATED STAT COUNTERS ──
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const duration = 1600;
+  const start = performance.now();
+  const isDecimal = String(target).includes('.');
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = isDecimal
+      ? (target * eased).toFixed(1)
+      : Math.floor(target * eased);
+    el.textContent = prefix + current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (entry.target.dataset.target) animateCounter(entry.target);
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => statsObserver.observe(el));
