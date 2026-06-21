@@ -37,7 +37,7 @@ body {
 /* ── TYPOGRAPHY ── */
 h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; line-height: 1.15; }
 h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(2.3rem, 4.5vw, 3.8rem); }
 h3 { font-size: 1.5rem; }
 p { line-height: 1.75; color: var(--gray-dark); font-size: 0.95rem; font-weight: 300; }
 em { font-style: italic; color: var(--gold); }
@@ -160,7 +160,7 @@ a { text-decoration: none; color: inherit; }
 .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
 .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: var(--transition); }
 
-/* ── HERO ── */
+/* ── HERO (editorial, full-bleed photographic) ── */
 .hero {
   position: relative;
   height: 100vh;
@@ -170,6 +170,124 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
   overflow: hidden;
   background: var(--black);
+}
+.hero--editorial { justify-content: flex-start; }
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1920&q=80') center/cover no-repeat;
+  transform: scale(1.06);
+  animation: heroZoom 16s ease-out forwards;
+}
+@keyframes heroZoom { to { transform: scale(1); } }
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(15,12,9,0.88) 0%, rgba(15,12,9,0.62) 42%, rgba(15,12,9,0.18) 100%),
+    linear-gradient(to top, rgba(15,12,9,0.7) 0%, transparent 45%);
+}
+.hero--editorial .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  max-width: 760px;
+  padding: 7rem clamp(2rem, 6vw, 7rem) 0;
+  color: var(--white);
+}
+.hero--editorial .hero-eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.32em;
+  margin-bottom: 1.75rem;
+}
+.hero--editorial .hero-headline {
+  color: var(--white);
+  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.35);
+}
+.hero--editorial .hero-headline em { color: var(--gold); }
+.hero--editorial .hero-sub {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  text-transform: none;
+  color: rgba(255,255,255,0.82);
+  max-width: 500px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+.hero-search {
+  display: flex;
+  max-width: 540px;
+  margin-bottom: 1.75rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.28);
+}
+.hero-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 1.05rem 1.3rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  outline: none;
+}
+.hero-search-input::placeholder { color: rgba(255,255,255,0.6); }
+.hero-search-btn {
+  flex-shrink: 0;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 0 1.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.hero-search-btn:hover { background: var(--gold-light); }
+.hero--editorial .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start; }
+.hero-agent-chip {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 4rem);
+  bottom: 3rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 1.2rem 0.7rem 0.7rem;
+  background: rgba(15,12,9,0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(177,143,94,0.4);
+}
+.hero-agent-chip img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+}
+.hac-info strong { display: block; color: #fff; font-size: 0.86rem; font-weight: 600; letter-spacing: 0.02em; }
+.hac-stars { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.05em; }
+.hac-stars em { color: rgba(255,255,255,0.6); font-style: normal; margin-left: 0.25rem; }
+@media (max-width: 768px) {
+  .hero-agent-chip { display: none; }
+  .hero-search { flex-direction: column; max-width: 100%; }
+  .hero-search-btn { padding: 0.9rem; }
+  .hero--editorial .hero-content { padding-top: 6rem; }
 }
 .hero-overlay {
   position: absolute;
@@ -553,7 +671,7 @@ a { text-decoration: none; color: inherit; }
 .listing-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .listing-img {
   position: relative;
-  height: 240px;
+  height: 300px;
   background: var(--gray-light);
   background-size: cover;
   background-position: center;
@@ -609,6 +727,39 @@ a { text-decoration: none; color: inherit; }
 }
 .listing-link:hover { color: var(--gold); }
 .listings-cta { text-align: center; }
+
+/* ── SELL / LIST WITH ME BAND ── */
+.sell-band {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(6rem, 12vw, 10rem) 0;
+  background: var(--black);
+}
+.sell-band-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover no-repeat;
+  background-attachment: fixed;
+}
+.sell-band-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(15,12,9,0.9) 0%, rgba(15,12,9,0.65) 55%, rgba(15,12,9,0.4) 100%);
+}
+.sell-band-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+.sell-band-content .section-eyebrow { color: var(--gold); }
+.sell-band-content h2 { color: var(--white); margin-bottom: 1.5rem; }
+.sell-band-content p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.8; margin-bottom: 2.25rem; }
+.sell-band-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .sell-band-photo { background-attachment: scroll; }
+}
 
 /* ── NEIGHBORHOODS ── */
 .neighborhoods { background: var(--black); }
