@@ -1,25 +1,30 @@
 /* ============================================
    WILLIAM C. LUXURY — WEBSITE STYLES
-   Color palette: Black, Gold, Off-white
+   Inspired by Huntington & Ellis: deep navy,
+   cream, champagne-gold accent, elegant serif
    ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 :root {
-  --black: #181511;
-  --black-soft: #1f1b15;
-  --black-mid: #322b20;
-  --gold: #b18f5e;
+  --navy: #072c49;
+  --navy-deep: #051f37;
+  --black: #0a1f33;
+  --black-soft: #0c2238;
+  --black-mid: #163049;
+  --gold: #b08d57;
   --gold-light: #cbac7d;
   --gold-dark: #8f6f45;
   --white: #ffffff;
-  --off-white: #f6f2ec;
-  --gray-light: #e7e1d7;
-  --gray-mid: #978d7e;
-  --gray-dark: #4d473d;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --off-white: #f5f3ef;
+  --gray-light: #e4ded3;
+  --gray-mid: #9a9286;
+  --gray-dark: #464846;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', -apple-system, sans-serif;
   --transition: 0.3s ease;
-  --shadow: 0 4px 30px rgba(24,21,17,0.10);
-  --shadow-lg: 0 24px 60px rgba(24,21,17,0.18);
+  --shadow: 0 4px 30px rgba(7,21,38,0.10);
+  --shadow-lg: 0 24px 60px rgba(7,21,38,0.16);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -55,7 +60,22 @@ a { text-decoration: none; color: inherit; }
   color: var(--gold);
   margin-bottom: 1rem;
 }
-.section-title { margin-bottom: 1.5rem; }
+.section-title {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  color: var(--navy);
+}
+.section-title em { text-transform: none; }
+.section-title.center::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.4rem auto 0;
+}
 .section-desc { max-width: 560px; margin: 0 auto 3rem; }
 .center { text-align: center; }
 
@@ -186,8 +206,8 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(15,12,9,0.88) 0%, rgba(15,12,9,0.62) 42%, rgba(15,12,9,0.18) 100%),
-    linear-gradient(to top, rgba(15,12,9,0.7) 0%, transparent 45%);
+    linear-gradient(90deg, rgba(7,21,38,0.9) 0%, rgba(7,21,38,0.62) 42%, rgba(7,21,38,0.18) 100%),
+    linear-gradient(to top, rgba(7,21,38,0.72) 0%, transparent 45%);
 }
 .hero--editorial .hero-content {
   position: relative;
@@ -746,7 +766,7 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(15,12,9,0.9) 0%, rgba(15,12,9,0.65) 55%, rgba(15,12,9,0.4) 100%);
+  background: linear-gradient(90deg, rgba(7,21,38,0.92) 0%, rgba(7,21,38,0.68) 55%, rgba(7,21,38,0.42) 100%);
 }
 .sell-band-content {
   position: relative;
@@ -761,7 +781,73 @@ a { text-decoration: none; color: inherit; }
   .sell-band-photo { background-attachment: scroll; }
 }
 
-/* ── NEIGHBORHOODS ── */
+/* ── AREAS WE SERVE (circular, H&E-inspired) ── */
+.areas { background: var(--off-white); }
+.areas-sub {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin: -0.5rem 0 3.5rem;
+}
+.areas-circles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.25rem;
+}
+.area-circle {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.area-circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(7,21,38,0.45);
+  transition: background var(--transition);
+}
+.area-circle::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  transition: border-color var(--transition);
+}
+.area-circle:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.area-circle:hover::before { background: rgba(7,21,38,0.3); }
+.area-circle:hover::after { border-color: var(--gold); }
+.area-circle span {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.areas-cta { text-align: center; margin-top: 3.5rem; }
+@media (max-width: 900px) {
+  .areas-circles { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+}
+@media (max-width: 460px) {
+  .areas-circles { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+}
+
+/* ── NEIGHBORHOODS (legacy) ── */
 .neighborhoods { background: var(--black); }
 .neighborhoods .section-eyebrow, .neighborhoods .section-title { color: var(--white); }
 .hood-grid {
@@ -1485,11 +1571,11 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(0);
 }
 
-/* Nav bar — warm charcoal glass */
+/* Nav bar — deep navy glass */
 #navbar.scrolled {
-  background: rgba(24,21,17,0.94) !important;
+  background: rgba(7,21,38,0.96) !important;
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(177,143,94,0.14);
+  border-bottom: 1px solid rgba(177,143,94,0.18);
 }
 
 /* ============================================
