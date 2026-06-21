@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ── INTERSECTION OBSERVER: fade-in on scroll ──
-const fadeEls = document.querySelectorAll('.listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid, .blog-card, .area-card');
+const fadeEls = document.querySelectorAll('.listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid, .blog-card, .area-card, .area-circle, .sell-band-content, .ig-bar, .ig-tile, .reels-row, .social-pill-lg, .press-tv, .video-grid, .calc-wrap');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
