@@ -24,6 +24,9 @@
 .hood-main h2:first-child, .article-main h2:first-child { margin-top: 0; }
 .hood-main h3, .article-main h3 { font-size: 1.3rem; margin: 2rem 0 0.75rem; font-family: var(--font-sans); font-weight: 600; }
 .hood-main p, .article-main p { margin-bottom: 1.25rem; }
+.article-list { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+.article-list li { position: relative; padding-left: 1.4rem; margin-bottom: 0.85rem; line-height: 1.6; }
+.article-list li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
 
 .hood-communities { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
 .community-tag {
