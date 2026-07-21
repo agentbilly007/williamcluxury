@@ -227,7 +227,7 @@ document.querySelectorAll('.stat-num[data-target]').forEach(el => statsObserver.
 
 // ── REEL STRIP: lazy-load + autoplay reels only when in view ──
 (function () {
-  const cards = document.querySelectorAll('.reel-strip .reel-video');
+  const cards = document.querySelectorAll('.reel-video');
   if (!cards.length) return;
 
   const loadSources = (video) => {

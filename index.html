@@ -452,15 +452,23 @@
         </div>
       </div>
 
-      <!-- Two top-performing videos, embedded -->
+      <!-- Two top-performing videos, playing locally -->
       <h3 class="results-sub">Watch the Two That Took Off</h3>
-      <div class="ig-embed-row">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dav9bL4B9fy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-          <a href="https://www.instagram.com/reel/Dav9bL4B9fy/" target="_blank" rel="noopener">Watch the 63K-view Las Vegas oasis reel on Instagram →</a>
-        </blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da03KOsSBfa/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-          <a href="https://www.instagram.com/reel/Da03KOsSBfa/" target="_blank" rel="noopener">Watch the 46K-view Strip reel on Instagram →</a>
-        </blockquote>
+      <div class="results-video-row">
+        <a class="rv-card" href="https://www.instagram.com/reel/Dav9bL4B9fy/" target="_blank" rel="noopener" aria-label="63K-view backyard oasis reel">
+          <video class="reel-video" muted loop playsinline preload="none" poster="social/thumbs/oasis-63k.jpg">
+            <source data-src="videos/oasis-63k.mp4" type="video/mp4" />
+          </video>
+          <span class="reel-views">63,438 views</span>
+          <span class="reel-play" aria-hidden="true">▶</span>
+        </a>
+        <a class="rv-card" href="https://www.instagram.com/reel/Da03KOsSBfa/" target="_blank" rel="noopener" aria-label="46K-view Strip-view patio reel">
+          <video class="reel-video" muted loop playsinline preload="none" poster="social/thumbs/monami-46k.jpg">
+            <source data-src="videos/monami-46k.mp4" type="video/mp4" />
+          </video>
+          <span class="reel-views">46,314 views</span>
+          <span class="reel-play" aria-hidden="true">▶</span>
+        </a>
       </div>
 
       <!-- Top performing videos leaderboard -->
@@ -578,15 +586,21 @@
         <a href="https://www.tiktok.com/@williamc.luxury" target="_blank" rel="noopener" class="reels-link">See all on TikTok →</a>
       </div>
       <div class="reels-row">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@williamc.luxury/video/7651626676777962766" data-video-id="7651626676777962766">
-          <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@williamc.luxury">@williamc.luxury</a></section>
-        </blockquote>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@williamc.luxury/video/7647335352687987981" data-video-id="7647335352687987981">
-          <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@williamc.luxury">@williamc.luxury</a></section>
-        </blockquote>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@williamc.luxury/video/7611596342539848973" data-video-id="7611596342539848973">
-          <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@williamc.luxury">@williamc.luxury</a></section>
-        </blockquote>
+        <a class="tt-card" href="https://www.tiktok.com/@williamc.luxury/video/7651626676777962766" target="_blank" rel="noopener" style="background-image:url('social/tiktok/7651626676777962766.jpg')">
+          <span class="tt-scrim"></span>
+          <span class="reel-play" aria-hidden="true">▶</span>
+          <span class="tt-cap">Las Vegas waterfront — unobstructed lake views</span>
+        </a>
+        <a class="tt-card" href="https://www.tiktok.com/@williamc.luxury/video/7647335352687987981" target="_blank" rel="noopener" style="background-image:url('social/tiktok/7647335352687987981.jpg')">
+          <span class="tt-scrim"></span>
+          <span class="reel-play" aria-hidden="true">▶</span>
+          <span class="tt-cap">Luxury waterfront — California or Nevada?</span>
+        </a>
+        <a class="tt-card" href="https://www.tiktok.com/@williamc.luxury/video/7611596342539848973" target="_blank" rel="noopener" style="background-image:url('social/tiktok/7611596342539848973.jpg')">
+          <span class="tt-scrim"></span>
+          <span class="reel-play" aria-hidden="true">▶</span>
+          <span class="tt-cap">Live in a luxury hotel — that's actually home</span>
+        </a>
       </div>
 
       <!-- YouTube -->
@@ -633,7 +647,6 @@
       </div>
     </div>
   </section>
-  <script async src="https://www.tiktok.com/embed.js"></script>
 
   <!-- TESTIMONIALS -->
   <section class="testimonials section" id="testimonials">
@@ -904,7 +917,6 @@
     </a>
   </div>
 
-  <script async src="//www.instagram.com/embed.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
