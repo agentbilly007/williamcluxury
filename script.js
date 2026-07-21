@@ -63,6 +63,8 @@ function formatCurrency(n) {
 }
 
 function calcMortgage() {
+  // Calculator was removed in the seller-focused redesign; no-op if absent.
+  if (!document.getElementById('monthly-total')) return;
   const price = parseFloat(document.getElementById('home-price')?.value) || 0;
   const down = parseFloat(document.getElementById('down-payment')?.value) || 0;
   const rate = parseFloat(document.getElementById('interest-rate')?.value) || 0;
