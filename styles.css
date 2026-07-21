@@ -217,29 +217,23 @@ a { text-decoration: none; color: inherit; }
   background: var(--ink);
 }
 .hero--editorial { justify-content: flex-start; }
-.hero-montage { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-.hero-montage .hm-slide {
+.hero-film { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: var(--ink); }
+.hero-film .hero-video {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  will-change: opacity, transform;
-  animation: hmCycle 18s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+  animation: heroDrift 24s ease-in-out infinite alternate;
 }
-.hero-montage .hm-slide:first-child { opacity: 1; }
-.hero-montage .hm-slide:nth-child(2) { animation-delay: 9s; }
-@keyframes hmCycle {
-  0%   { opacity: 1; transform: scale(1.08); }
-  40%  { opacity: 1; }
-  50%  { opacity: 0; transform: scale(1.0); }
-  90%  { opacity: 0; }
-  100% { opacity: 1; transform: scale(1.08); }
+@keyframes heroDrift {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.14); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-montage .hm-slide { animation: none; transform: none; }
-  .hero-montage .hm-slide:first-child { opacity: 1; }
-  .hero-montage .hm-slide:nth-child(2) { opacity: 0; }
+  .hero-film .hero-video { animation: none; transform: scale(1.06); }
 }
 .hero-scrim {
   position: absolute;
@@ -331,6 +325,96 @@ a { text-decoration: none; color: inherit; }
   .hero-agent-chip { display: none; }
   .hero--editorial .hero-content { padding-top: 6rem; }
   .hero-scroll { display: none; }
+}
+
+/* ── REEL STRIP (social-first video feed) ── */
+.reel-strip {
+  background: var(--ink);
+  padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(2.25rem, 4vw, 3.5rem);
+  text-align: center;
+}
+.reel-strip-inner {
+  display: flex;
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+  justify-content: center;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.reel-strip-inner::-webkit-scrollbar { display: none; }
+.reel-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(150px, 20vw, 232px);
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #17171a;
+  scroll-snap-align: center;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s ease;
+}
+.reel-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(0,0,0,0.6); }
+.reel-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.reel-views {
+  position: absolute;
+  left: 0.7rem;
+  bottom: 0.7rem;
+  z-index: 2;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.reel-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.85rem;
+  padding-left: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.reel-card:hover .reel-play { opacity: 1; }
+.reel-strip-cta {
+  display: inline-block;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  color: rgba(255,255,255,0.72);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.reel-strip-cta:hover { color: var(--gold-light); }
+@media (max-width: 768px) {
+  .reel-strip-inner { justify-content: flex-start; }
+  .reel-play { opacity: 1; }
 }
 
 /* ── STATS BAR (glossy white band) ── */

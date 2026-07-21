@@ -224,3 +224,31 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 
 document.querySelectorAll('.stat-num[data-target]').forEach(el => statsObserver.observe(el));
+
+// ── REEL STRIP: lazy-load + autoplay reels only when in view ──
+(function () {
+  const cards = document.querySelectorAll('.reel-strip .reel-video');
+  if (!cards.length) return;
+
+  const loadSources = (video) => {
+    if (video.dataset.loaded) return;
+    video.querySelectorAll('source[data-src]').forEach(s => { s.src = s.dataset.src; });
+    video.load();
+    video.dataset.loaded = '1';
+  };
+
+  const reelObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        loadSources(video);
+        const p = video.play();
+        if (p && p.catch) p.catch(() => {}); // ignore autoplay rejections
+      } else if (video.dataset.loaded) {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  cards.forEach(v => reelObserver.observe(v));
+})();

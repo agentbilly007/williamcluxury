@@ -177,9 +177,11 @@
 
   <!-- HERO -->
   <section class="hero hero--editorial" id="home">
-    <div class="hero-montage" aria-hidden="true">
-      <div class="hm-slide" style="background-image:url('billy-lifestyle.jpg'); background-position:center;"></div>
-      <div class="hm-slide" style="background-image:url('billy-suit.jpg'); background-position:center top;"></div>
+    <div class="hero-film" aria-hidden="true">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto"
+             poster="social/thumbs/oasis-63k.jpg">
+        <source src="videos/oasis-63k.mp4" type="video/mp4" />
+      </video>
     </div>
     <div class="hero-scrim"></div>
 
@@ -203,9 +205,44 @@
     </div>
 
     <div class="hero-scroll">
-      <span>Scroll</span>
+      <span>Watch</span>
       <div class="scroll-line"></div>
     </div>
+  </section>
+
+  <!-- REEL STRIP (social-first feed) -->
+  <section class="reel-strip" id="reels" aria-label="Recent listing videos">
+    <div class="reel-strip-inner">
+      <a class="reel-card" href="https://www.instagram.com/reel/Dav9bL4B9fy/" target="_blank" rel="noopener" aria-label="Backyard oasis reel — 63K views">
+        <video class="reel-video" muted loop playsinline preload="none" poster="social/thumbs/oasis-63k.jpg">
+          <source data-src="videos/oasis-63k.mp4" type="video/mp4" />
+        </video>
+        <span class="reel-views">63K views</span>
+        <span class="reel-play" aria-hidden="true">▶</span>
+      </a>
+      <a class="reel-card" href="https://www.instagram.com/reel/Da03KOsSBfa/" target="_blank" rel="noopener" aria-label="Strip-view patio reel — 46K views">
+        <video class="reel-video" muted loop playsinline preload="none" poster="social/thumbs/monami-46k.jpg">
+          <source data-src="videos/monami-46k.mp4" type="video/mp4" />
+        </video>
+        <span class="reel-views">46K views</span>
+        <span class="reel-play" aria-hidden="true">▶</span>
+      </a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DZISrGqp3Q9/" target="_blank" rel="noopener" aria-label="Las Vegas home search reel — 28K views">
+        <video class="reel-video" muted loop playsinline preload="none" poster="social/thumbs/search-28k.jpg">
+          <source data-src="videos/search-28k.mp4" type="video/mp4" />
+        </video>
+        <span class="reel-views">28K views</span>
+        <span class="reel-play" aria-hidden="true">▶</span>
+      </a>
+      <a class="reel-card" href="https://www.instagram.com/reel/DallngGyTTl/" target="_blank" rel="noopener" aria-label="Single-story casita reel — 22K views">
+        <video class="reel-video" muted loop playsinline preload="none" poster="social/thumbs/casita-22k.jpg">
+          <source data-src="videos/casita-22k.mp4" type="video/mp4" />
+        </video>
+        <span class="reel-views">22K views</span>
+        <span class="reel-play" aria-hidden="true">▶</span>
+      </a>
+    </div>
+    <a class="reel-strip-cta" href="https://www.instagram.com/williamc.luxury/" target="_blank" rel="noopener">Follow @williamc.luxury for more →</a>
   </section>
 
   <!-- STATS BAR -->
