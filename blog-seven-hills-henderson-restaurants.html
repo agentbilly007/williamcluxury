@@ -35,18 +35,7 @@
   </script>
 </head>
 <body>
-  <nav id="navbar" class="scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="logo"><span class="logo-name">WILLIAM C.</span><span class="logo-tag">LUXURY</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#search">Home Search</a></li>
-        <li><a href="index.html#listings">Listings</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div id="site-nav"></div>
 
   <section class="article-hero">
     <div class="container">
@@ -137,14 +126,7 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-brand">WILLIAM C. LUXURY</p>
-      <p>William Crawford · REALTOR® · Huntington &amp; Ellis · License #S.0200576</p>
-      <p><a href="tel:7255679482">725-567-9482</a> · <a href="mailto:billy@huntingtonandellis.com">billy@huntingtonandellis.com</a></p>
-      <p class="footer-fine">© 2026 William Crawford. All rights reserved. Information deemed reliable but not guaranteed.</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <script>
     const navbar = document.getElementById('navbar');
@@ -152,5 +134,6 @@
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
   </script>
+  <script src="site.js"></script>
 </body>
 </html>
