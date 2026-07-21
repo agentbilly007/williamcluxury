@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Work — William Crawford | Las Vegas Listing Videos</title>
+  <meta name="description" content="Real listing videos from William Crawford — the reach and results behind homes marketed with cinematic video across Las Vegas & Henderson." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="nav-mark" href="https://williamcluxury.com/">WILLIAM C. <span>LUXURY</span></a>
+    <a class="nav-cta" href="https://williamcluxury.com/#contact">Work With William</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="work-hero">
+    <div class="wh-inner">
+      <p class="eyebrow">The Work</p>
+      <h1>Proof in <em>every frame.</em></h1>
+      <p class="wh-sub">These are real listing videos — the exact marketing your home gets. Hundreds of thousands of buyers reached across Las Vegas &amp; Henderson, one property at a time.</p>
+    </div>
+    <a href="#showcase" class="wh-scroll" aria-label="Scroll to the work"><span></span></a>
+  </header>
+
+  <!-- INTERACTIVE SHOWCASE -->
+  <section class="showcase" id="showcase">
+    <div class="stage">
+      <!-- Featured player -->
+      <div class="feature">
+        <div class="feature-frame">
+          <video id="feature-video" playsinline preload="metadata"
+                 poster="../social/thumbs/oasis-63k.jpg">
+            <source src="../videos/oasis-63k.mp4" type="video/mp4" />
+          </video>
+          <button class="feature-play" id="feature-play" aria-label="Play with sound">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <span class="feature-sound" id="feature-sound" aria-hidden="true">Tap for sound</span>
+        </div>
+        <div class="feature-meta">
+          <span class="fm-views" id="fm-views">63,438 views</span>
+          <p class="fm-cap" id="fm-cap">Backyard oasis — pool, glass doors &amp; open living</p>
+          <a class="fm-link" id="fm-link" href="https://www.instagram.com/reel/Dav9bL4B9fy/" target="_blank" rel="noopener">Watch on Instagram ↗</a>
+        </div>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist" id="playlist" role="list" aria-label="Listing videos">
+        <!-- built by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- THE NUMBERS -->
+  <section class="numbers">
+    <div class="numbers-inner">
+      <div class="stat"><span class="stat-n">200K+</span><span class="stat-l">Views · 6 Months</span></div>
+      <div class="stat"><span class="stat-n">63K</span><span class="stat-l">Top Listing Video</span></div>
+      <div class="stat"><span class="stat-n">5.0★</span><span class="stat-l">Google Rating</span></div>
+      <div class="stat"><span class="stat-n">$10M+</span><span class="stat-l">Homes Sold</span></div>
+    </div>
+  </section>
+
+  <!-- MORE / SOCIAL -->
+  <section class="more">
+    <h2 class="more-head">More on the feed</h2>
+    <div class="more-grid" id="more-grid"><!-- built by app.js --></div>
+  </section>
+
+  <!-- CTA -->
+  <section class="work-cta">
+    <div class="wc-inner">
+      <p class="eyebrow">For Sellers</p>
+      <h2>Your home deserves<br />this kind of debut.</h2>
+      <p class="wc-sub">If this is how a listing should look, let's talk about yours.</p>
+      <div class="wc-actions">
+        <a href="https://williamcluxury.com/home-value.html" class="btn btn-solid">Get My Home's Value</a>
+        <a href="https://williamcluxury.com/#contact" class="btn btn-ghost">List With William</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="work-foot">
+    <span>William Crawford · Huntington &amp; Ellis</span>
+    <span>Las Vegas &amp; Henderson Listing Agent</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
