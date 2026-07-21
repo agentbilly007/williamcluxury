@@ -529,6 +529,19 @@ a { text-decoration: none; color: inherit; }
   color: var(--white); text-align: center; font-size: 1.25rem;
   margin-bottom: 1.75rem; letter-spacing: -0.01em;
 }
+.ig-embed-row {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem;
+  max-width: 760px; margin: 0 auto 4rem; justify-items: center; align-items: start;
+}
+.ig-embed-row .instagram-media {
+  background: #fff; border: 0; border-radius: 8px;
+  box-shadow: 0 14px 44px rgba(0,0,0,0.4);
+  margin: 0 !important; max-width: 360px !important; min-width: 0 !important; width: 100% !important;
+}
+.ig-embed-row iframe { width: 100% !important; }
+.ig-embed-row .instagram-media > a { display: block; padding: 1.5rem 1.25rem; color: var(--ink); font-size: 0.85rem; font-weight: 700; line-height: 1.5; text-align: center; }
+@media (max-width: 640px) { .ig-embed-row { grid-template-columns: 1fr; max-width: 360px; } }
+
 .leaderboard { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
 .lb-row {
   display: flex; align-items: center; gap: 1.5rem;
