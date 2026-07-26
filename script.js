@@ -117,59 +117,18 @@ document.addEventListener('DOMContentLoaded', () => {
   calcMortgage();
 });
 
-// ── EXIT INTENT POPUP ──
-(function() {
-  // Only show on main pages, not home-value page itself
-  if (window.location.pathname.includes('home-value')) return;
-
-  let shown = false;
-  let timeOnPage = 0;
-  const timer = setInterval(() => { timeOnPage++; }, 1000);
-
-  function showPopup() {
-    if (shown) return;
-    shown = true;
-    clearInterval(timer);
-    const popup = document.getElementById('exit-popup');
-    if (popup) popup.classList.add('active');
-  }
-
-  // Desktop: mouse leaves top of browser
-  document.addEventListener('mouseleave', function(e) {
-    if (e.clientY < 10 && timeOnPage >= 15) showPopup();
-  });
-
-  // Mobile: back button / scroll up aggressively
-  let lastScrollY = window.scrollY;
-  window.addEventListener('scroll', function() {
-    const currentY = window.scrollY;
-    if (lastScrollY - currentY > 80 && currentY < 200 && timeOnPage >= 20) showPopup();
-    lastScrollY = currentY;
-  });
-
-  // Close handlers
-  document.addEventListener('DOMContentLoaded', function() {
-    const closeBtn = document.getElementById('exit-popup-close');
-    const overlay = document.getElementById('exit-popup');
-    if (closeBtn) closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
-    if (overlay) overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) overlay.classList.remove('active');
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') overlay && overlay.classList.remove('active');
-    });
-  });
-})();
+// Exit-intent popup removed 2026-07-26 — it worked against the calm,
+// no-pressure feel the rest of the site is going for.
 
 // ── INTERSECTION OBSERVER: fade-in on scroll ──
-const fadeEls = document.querySelectorAll('.listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid, .blog-card, .area-card, .area-circle, .sell-band-content, .ig-bar, .ig-tile, .reels-row, .social-pill-lg, .press-tv, .video-grid, .calc-wrap');
+const fadeEls = document.querySelectorAll('.listing-card, .testimonial-card, .search-feature, .hood-card, .about-grid, .contact-grid, .blog-card, .area-card, .area-circle, .calm-step, .trust-item, .reel-card, .sell-band-content, .ig-bar, .ig-tile, .reels-row, .social-pill-lg, .press-tv, .video-grid, .calc-wrap');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
-      }, i * 80);
+      }, i * 60);
       observer.unobserve(entry.target);
     }
   });
@@ -179,8 +138,8 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 if (!reduceMotion) {
   fadeEls.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,0.7,0.2,1)';
     observer.observe(el);
   });
   // Safety net: never leave content hidden (screenshots, crawlers, odd browsers)
