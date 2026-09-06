@@ -1418,6 +1418,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .pd-layout { display: grid; grid-template-columns: 1fr 380px; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
+/* .pd-head is its own grid item so mobile can order price-then-tour-then-detail.
+   On desktop it stays in the left column with the tour card alongside it. */
+.pd-head { grid-column: 1; }
+.pd-layout > div:not(.pd-head) { grid-column: 1; }
+.pd-aside { grid-column: 2; grid-row: 1 / span 2; }
 .pd-head { border-bottom: 1px solid var(--line); padding-bottom: 1.6rem; margin-bottom: 1.8rem; }
 .pd-price { font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 2.6rem); font-weight: 700; letter-spacing: -0.025em; }
 .pd-head h1 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 600; margin-top: 0.5rem; }
@@ -1480,7 +1485,12 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 1000px) {
   .lst-grid { grid-template-columns: repeat(2, 1fr); }
   .pd-layout { grid-template-columns: 1fr; }
-  .pd-aside { position: static; }
+  /* Tour request goes FIRST on phones and tablets. Stacked normally it lands
+     below the photos, description, highlights and every property fact, so the
+     one thing we want them to do is the last thing they'd ever see. */
+  .pd-head { grid-column: 1; order: -2; }
+  .pd-layout > div:not(.pd-head) { grid-column: 1; }
+  .pd-aside { position: static; grid-column: 1; grid-row: auto; order: -1; margin-bottom: 2.25rem; }
   .pd-thumbs { grid-template-columns: repeat(6, 1fr); }
 }
 @media (max-width: 640px) {
