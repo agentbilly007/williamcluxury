@@ -11,6 +11,7 @@
       <a href="index.html" class="logo"><span class="logo-name">WILLIAM C.</span><span class="logo-tag">LUXURY</span></a>
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="nav-links">
+        <li><a href="listings.html">My Listings</a></li>
         <li><a href="buy.html">Search Homes</a></li>
         <li><a href="sell.html">Sell</a></li>
         <li><a href="neighborhoods.html">Neighborhoods</a></li>
@@ -33,6 +34,7 @@
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
+        <a href="listings.html">My Listings</a>
         <a href="buy.html">Search Homes</a>
         <a href="sell.html">Sell Your Home</a>
         <a href="home-value.html">Home Value</a>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://williamcluxury.com/</loc><lastmod>2026-07-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://williamcluxury.com/listings</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://williamcluxury.com/listing-6857-adobe-villa</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://williamcluxury.com/listing-2511-palmera</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://williamcluxury.com/listing-5113-mambo-vista</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://williamcluxury.com/sell</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
   <url><loc>https://williamcluxury.com/buy</loc><lastmod>2026-07-21</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://williamcluxury.com/home-value</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
