@@ -1418,7 +1418,17 @@ a { text-decoration: none; color: inherit; }
 }
 
 .pd-layout { display: grid; grid-template-columns: 1fr 380px; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
-/* .pd-head is its own grid item so mobile can order price-then-tour-then-detail.
+/* One Request a Tour button at the very top, above the photos, on every device.
+   It anchors down to the form so there is still only one form on the page. */
+/* The site nav is position:fixed and 52px tall with no body offset, so the first
+   element on the page renders underneath it. Clear it explicitly. */
+.pd-toptour { max-width: 1200px; margin: 0 auto 1.35rem; padding: 4.5rem clamp(1.25rem, 4vw, 2.5rem) 0; }
+.pd-toptour .btn { display: block; width: 100%; text-align: center; padding: 1.05rem 1.5rem; font-size: 0.95rem; }
+@media (min-width: 1001px) {
+  .pd-toptour .btn { display: inline-block; width: auto; min-width: 260px; }
+}
+
+/* .pd-head is its own grid item so the price sits above the details.
    On desktop it stays in the left column with the tour card alongside it. */
 .pd-head { grid-column: 1; }
 .pd-layout > div:not(.pd-head) { grid-column: 1; }
@@ -1488,9 +1498,9 @@ a { text-decoration: none; color: inherit; }
   /* Tour request goes FIRST on phones and tablets. Stacked normally it lands
      below the photos, description, highlights and every property fact, so the
      one thing we want them to do is the last thing they'd ever see. */
-  .pd-head { grid-column: 1; order: -2; }
+  .pd-head { grid-column: 1; }
   .pd-layout > div:not(.pd-head) { grid-column: 1; }
-  .pd-aside { position: static; grid-column: 1; grid-row: auto; order: -1; margin-bottom: 2.25rem; }
+  .pd-aside { position: static; grid-column: 1; grid-row: auto; }
   .pd-thumbs { grid-template-columns: repeat(6, 1fr); }
 }
 @media (max-width: 640px) {
