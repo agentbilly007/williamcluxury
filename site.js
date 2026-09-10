@@ -64,7 +64,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2026 William Crawford. Licensed Nevada REALTOR®. Huntington &amp; Ellis, A Real Estate Agency. All rights reserved.</p>
+        <p>© 2026 William Crawford, REALTOR® · Nevada License S.0200576 · Huntington &amp; Ellis, A Real Estate Agency · Broker: Craig M. Tann. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a> · <a href="fair-housing.html">Fair Housing</a> · Equal Housing Opportunity. Information deemed reliable but not guaranteed.</p>
       </div>
     </div>
