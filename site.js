@@ -8,18 +8,18 @@
   const NAV = `
   <nav id="navbar" class="scrolled">
     <div class="nav-inner">
-      <a href="index.html" class="logo"><span class="logo-name">WILLIAM C.</span><span class="logo-tag">LUXURY</span></a>
+      <a href="/" class="logo"><span class="logo-name">WILLIAM C.</span><span class="logo-tag">LUXURY</span></a>
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="listings.html">My Listings</a></li>
-        <li><a href="buy.html">Search Homes</a></li>
-        <li><a href="sell.html">Sell</a></li>
-        <li><a href="neighborhoods.html">Neighborhoods</a></li>
+        <li><a href="/listings">My Listings</a></li>
+        <li><a href="/buy">Search Homes</a></li>
+        <li><a href="/sell">Sell</a></li>
+        <li><a href="/neighborhoods">Neighborhoods</a></li>
         <li><a href="work/">The Work</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="home-value.html" class="nav-cta nav-cta-outline">Home Value</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/home-value" class="nav-cta nav-cta-outline">Home Value</a></li>
+        <li><a href="/contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>`;
@@ -28,28 +28,28 @@
   <footer class="footer">
     <div class="footer-cols">
       <div class="footer-col">
-        <a href="index.html" class="logo" style="margin-bottom:1rem"><span class="logo-name">WILLIAM C.</span> <span class="logo-tag">LUXURY</span></a>
+        <a href="/" class="logo" style="margin-bottom:1rem"><span class="logo-name">WILLIAM C.</span> <span class="logo-tag">LUXURY</span></a>
         <p>William Crawford — Las Vegas &amp; Henderson listing agent marketing homes with cinematic video that reaches hundreds of thousands of buyers.</p>
         <p class="footer-contactline" style="margin-top:0.75rem">Huntington &amp; Ellis, A Real Estate Agency</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href="listings.html">My Listings</a>
-        <a href="buy.html">Search Homes</a>
-        <a href="sell.html">Sell Your Home</a>
-        <a href="home-value.html">Home Value</a>
+        <a href="/listings">My Listings</a>
+        <a href="/buy">Search Homes</a>
+        <a href="/sell">Sell Your Home</a>
+        <a href="/home-value">Home Value</a>
         <a href="work/">The Work</a>
-        <a href="about.html">About William</a>
-        <a href="blog.html">Blog</a>
+        <a href="/about">About William</a>
+        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
         <h4>Neighborhoods</h4>
-        <a href="summerlin.html">Summerlin</a>
-        <a href="henderson.html">Henderson</a>
-        <a href="seven-hills.html">Seven Hills</a>
-        <a href="green-valley.html">Green Valley</a>
-        <a href="spring-valley.html">Spring Valley</a>
-        <a href="neighborhoods.html">All Neighborhoods</a>
+        <a href="/summerlin">Summerlin</a>
+        <a href="/henderson">Henderson</a>
+        <a href="/seven-hills">Seven Hills</a>
+        <a href="/green-valley">Green Valley</a>
+        <a href="/spring-valley">Spring Valley</a>
+        <a href="/neighborhoods">All Neighborhoods</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -65,7 +65,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p>© 2026 William Crawford, REALTOR® · Nevada License S.0200576 · Huntington &amp; Ellis, A Real Estate Agency · Broker: Craig M. Tann. All rights reserved.</p>
-        <p><a href="privacy.html">Privacy Policy</a> · <a href="fair-housing.html">Fair Housing</a> · Equal Housing Opportunity. Information deemed reliable but not guaranteed.</p>
+        <p><a href="/privacy">Privacy Policy</a> · <a href="/fair-housing">Fair Housing</a> · Equal Housing Opportunity. Information deemed reliable but not guaranteed.</p>
       </div>
     </div>
   </footer>`;
@@ -77,9 +77,12 @@
     if (footMount) footMount.outerHTML = FOOTER;
 
     // Highlight the current page in the nav.
-    const here = location.pathname.split("/").pop() || "index.html";
+    // Links are extensionless (/henderson) to match the canonicals, but GitHub
+    // Pages also serves /henderson.html — normalise both sides before comparing.
+    const norm = (u) => (u || "").replace(/\.html$/, "").replace(/\/$/, "") || "/";
+    const here = norm(location.pathname);
     document.querySelectorAll("#nav-links a").forEach((a) => {
-      if (a.getAttribute("href") === here) a.style.color = "var(--ink)";
+      if (norm(a.getAttribute("href")) === here) a.style.color = "var(--ink)";
     });
 
     // Mobile menu toggle.
