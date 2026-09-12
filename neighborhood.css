@@ -109,3 +109,36 @@
   .blog-grid { grid-template-columns: 1fr; }
   .market-stats { flex-direction: column; gap: 0; }
 }
+
+/* Price-band tables in the neighborhood guides.
+   These used inline styles only and had no cell rules at all, so the numbers
+   ran together. Scoped to neighborhood.css so the homepage .diff-table (a
+   div grid with no th/td) is untouched. */
+.tblwrap { overflow-x: auto; margin: 1rem 0 0.5rem; -webkit-overflow-scrolling: touch; }
+.diff-table { width: 100%; border-collapse: collapse; }
+.diff-table th,
+.diff-table td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.diff-table thead th {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom-width: 1px;
+}
+.diff-table td + td,
+.diff-table thead th + th { text-align: right; white-space: nowrap; }
+.diff-table tbody tr:last-child td { border-bottom: none; }
+
+/* A grid track of 1fr is minmax(auto,1fr), so a wide table sets a min-content
+   floor and shoves the sidebar off the page. min-width:0 lets the column
+   shrink so .tblwrap's own overflow-x scrolls instead. */
+.hood-main, .article-main { min-width: 0; }
+.hood-grid, .article-grid { max-width: 100%; }

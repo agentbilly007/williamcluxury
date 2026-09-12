@@ -200,6 +200,9 @@ a { text-decoration: none; color: inherit; }
   color: var(--white) !important;
   padding: 0.65rem 1.4rem !important;
   border-radius: var(--r-btn);
+  /* Both nav CTAs are buttons, so their label must never wrap to two lines —
+     "Home Value" was breaking and overlapping the link beside it. */
+  white-space: nowrap;
 }
 .nav-cta:hover { background: #000 !important; }
 .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
