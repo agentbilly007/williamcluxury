@@ -50,6 +50,7 @@
         <a href="/seven-hills">Seven Hills</a>
         <a href="/green-valley">Green Valley</a>
         <a href="/spring-valley">Spring Valley</a>
+        <a href="/desert-shores">Desert Shores &amp; The Lakes</a>
         <a href="/neighborhoods">All Neighborhoods</a>
       </div>
       <div class="footer-col">
