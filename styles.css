@@ -1513,3 +1513,7 @@ a { text-decoration: none; color: inherit; }
   .pd-thumbs { grid-template-columns: repeat(4, 1fr); }
   .pd-keyspecs { gap: 1.25rem; }
 }
+
+/* Under-contract status (added 10/2/2026) */
+.lst-badge-uc { background: #b08d57; }
+.pd-status { display: inline-block; background: #b08d57; color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 0.75rem; border-radius: 6px; margin-bottom: 0.6rem; }
