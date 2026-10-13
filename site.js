@@ -45,13 +45,28 @@
       </div>
       <div class="footer-col">
         <h4>Neighborhoods</h4>
-        <a href="/summerlin">Summerlin</a>
-        <a href="/henderson">Henderson</a>
-        <a href="/seven-hills">Seven Hills</a>
-        <a href="/green-valley">Green Valley</a>
-        <a href="/spring-valley">Spring Valley</a>
+        <a href="/summerlin">Summerlin homes for sale</a>
+        <a href="/henderson">Henderson homes for sale</a>
+        <a href="/seven-hills">Seven Hills, Henderson</a>
+        <a href="/green-valley">Green Valley, Henderson</a>
+        <a href="/anthem">Anthem, Henderson</a>
+        <a href="/spring-valley">Spring Valley, Las Vegas</a>
         <a href="/desert-shores">Desert Shores &amp; The Lakes</a>
-        <a href="/neighborhoods">All Neighborhoods</a>
+        <a href="/lake-las-vegas">Lake Las Vegas</a>
+        <a href="/southern-highlands">Southern Highlands</a>
+        <a href="/mountains-edge">Mountain's Edge</a>
+        <a href="/las-vegas">Las Vegas neighborhoods guide</a>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <a href="/blog-relocating-to-las-vegas-2026">Relocating to Las Vegas: step-by-step guide</a>
+        <a href="/blog-moving-to-las-vegas-from-california">Moving to Las Vegas from California</a>
+        <a href="/blog-living-in-las-vegas-2026">Living in Las Vegas: cost of living &amp; best areas</a>
+        <a href="/blog-living-in-henderson-nv-2026">Living in Henderson, NV</a>
+        <a href="/blog-first-time-home-buyer-las-vegas">First-time home buyer guide</a>
+        <a href="/blog-how-to-sell-your-home-las-vegas">How to sell your home in Las Vegas</a>
+        <a href="/blog-best-neighborhoods-las-vegas-families">Master-planned communities compared</a>
+        <a href="/blog-new-construction-las-vegas-2026">New construction homes in Las Vegas</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>

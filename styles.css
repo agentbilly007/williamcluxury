@@ -1091,7 +1091,7 @@ a { text-decoration: none; color: inherit; }
 .hub-card span { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
 
 /* Rich footer columns */
-.footer-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2.5rem; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.25rem,5vw,2rem); }
+.footer-cols { display: grid; grid-template-columns: 1.3fr 0.9fr 1.1fr 1.3fr 1fr; gap: 2.5rem; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.25rem,5vw,2rem); }
 .footer-col h4 { font-family: var(--font-sans); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1.1rem; }
 .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.72); text-decoration: none; padding: 0.32rem 0; transition: color var(--transition); }
 .footer-col a:hover { color: var(--white); }
@@ -1517,3 +1517,10 @@ a { text-decoration: none; color: inherit; }
 /* Under-contract status (added 10/2/2026) */
 .lst-badge-uc { background: #b08d57; }
 .pd-status { display: inline-block; background: #b08d57; color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 0.75rem; border-radius: 6px; margin-bottom: 0.6rem; }
+
+/* crawlable link rows (SEO internal links, 2026-10-12) */
+.footer-explore { display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem; max-width:1200px; margin:1.5rem auto 0; padding:0 clamp(1.25rem,5vw,2rem); }
+.footer-explore a { font-size:0.74rem; color:rgba(255,255,255,0.5); text-decoration:none; }
+.footer-explore a:hover { color:var(--white); }
+.static-sitemap { padding:2rem clamp(1.25rem,5vw,2rem); font-size:0.85rem; }
+.static-sitemap ul { list-style:none; margin:0 0 1rem; padding:0; display:flex; flex-wrap:wrap; gap:0.4rem 1rem; }
