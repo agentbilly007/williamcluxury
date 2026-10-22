@@ -15,6 +15,7 @@
         <li><a href="/buy">Search Homes</a></li>
         <li><a href="/sell">Sell</a></li>
         <li><a href="/neighborhoods">Neighborhoods</a></li>
+        <li><a href="/new-construction">New Construction</a></li>
         <li><a href="work/">The Work</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
@@ -55,6 +56,7 @@
         <a href="/lake-las-vegas">Lake Las Vegas</a>
         <a href="/southern-highlands">Southern Highlands</a>
         <a href="/mountains-edge">Mountain's Edge</a>
+        <a href="/new-construction-aries-henderson">Aries new construction, Henderson</a>
         <a href="/las-vegas">Las Vegas neighborhoods guide</a>
       </div>
       <div class="footer-col">
@@ -66,7 +68,8 @@
         <a href="/blog-first-time-home-buyer-las-vegas">First-time home buyer guide</a>
         <a href="/blog-how-to-sell-your-home-las-vegas">How to sell your home in Las Vegas</a>
         <a href="/blog-best-neighborhoods-las-vegas-families">Master-planned communities compared</a>
-        <a href="/blog-new-construction-las-vegas-2026">New construction homes in Las Vegas</a>
+        <a href="/new-construction">New construction homes in Henderson &amp; Las Vegas</a>
+        <a href="/blog-new-construction-las-vegas-2026">New construction: what to know</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
