@@ -12,6 +12,7 @@
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="nav-links">
         <li><a href="/listings">My Listings</a></li>
+        <li><a href="/sold">Sold</a></li>
         <li><a href="/buy">Search Homes</a></li>
         <li><a href="/sell">Sell</a></li>
         <li><a href="/neighborhoods">Neighborhoods</a></li>
@@ -36,6 +37,7 @@
       <div class="footer-col">
         <h4>Explore</h4>
         <a href="/listings">My Listings</a>
+        <a href="/sold">Sold Homes</a>
         <a href="/buy">Search Homes</a>
         <a href="/sell">Sell Your Home</a>
         <a href="/home-value">Home Value</a>

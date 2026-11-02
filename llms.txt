@@ -7,6 +7,7 @@ Website: https://williamcluxury.com
 
 ## Main pages
 - [Current listings](https://williamcluxury.com/listings): homes William is currently selling
+- [Sold / closed transactions](https://williamcluxury.com/sold): closed sales with Huntington & Ellis, each labeled by William's role (listing agent for the seller, or buyer's agent)
 - [Sell your home](https://williamcluxury.com/sell): how William markets and sells homes
 - [Buy a home](https://williamcluxury.com/buy): search and buyer help
 - [What is my home worth](https://williamcluxury.com/home-value): request a home value
