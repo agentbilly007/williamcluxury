@@ -38,6 +38,7 @@
         <a href="/listings">My Listings</a>
         <a href="/buy">Search Homes</a>
         <a href="/sell">Sell Your Home</a>
+        <a href="/relocation">Relocating to Las Vegas</a>
         <a href="/home-value">Home Value</a>
         <a href="work/">The Work</a>
         <a href="/about">About William</a>
