@@ -7,15 +7,17 @@ window.addEventListener('scroll', () => {
 // ── HAMBURGER menu ──
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  hamburger.classList.toggle('active');
-});
+// The scrolled navbar's backdrop-filter traps the fixed full-screen menu,
+// so flag the open state to switch it off (see styles.css).
+const setMenu = (open) => {
+  navLinks.classList.toggle('open', open);
+  hamburger.classList.toggle('active', open);
+  navbar.classList.toggle('menu-open', open);
+  document.body.classList.toggle('menu-open', open);
+};
+hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('active');
-  });
+  link.addEventListener('click', () => setMenu(false));
 });
 
 // ── CONTACT FORM ──

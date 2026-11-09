@@ -109,15 +109,19 @@
     // Mobile menu toggle.
     const burger = document.getElementById("hamburger");
     if (burger) {
-      burger.addEventListener("click", function () {
-        document.getElementById("nav-links").classList.toggle("open");
-        this.classList.toggle("active");
-      });
+      // The scrolled navbar's backdrop-filter makes it the containing block for
+      // the fixed full-screen menu, so flag the open state to switch it off.
+      const setMenu = (open) => {
+        document.getElementById("nav-links").classList.toggle("open", open);
+        burger.classList.toggle("active", open);
+        document.getElementById("navbar").classList.toggle("menu-open", open);
+        document.body.classList.toggle("menu-open", open);
+      };
+      burger.addEventListener("click", () =>
+        setMenu(!document.getElementById("nav-links").classList.contains("open"))
+      );
       document.querySelectorAll("#nav-links a").forEach((a) =>
-        a.addEventListener("click", () => {
-          document.getElementById("nav-links").classList.remove("open");
-          burger.classList.remove("active");
-        })
+        a.addEventListener("click", () => setMenu(false))
       );
     }
   }
