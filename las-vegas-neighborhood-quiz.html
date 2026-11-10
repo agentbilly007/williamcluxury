@@ -31,7 +31,7 @@
       <p class="section-eyebrow">Free 1-Minute Quiz</p>
       <h1>Which Las Vegas neighborhood<br /><em>fits you?</em></h1>
       <p class="reloc-lede">Answer eight quick questions about your budget, your home, your commute and your lifestyle. You'll see the three neighborhoods that fit best, scored on the homes actually for sale there.</p>
-      <p class="guide-meta">By William Crawford, REALTOR® · Home data from the MLS, November 9, 2026</p>
+      <p class="guide-meta">By William Crawford, REALTOR® · Home data: Las Vegas REALTORS® MLS, November 9, 2026</p>
     </div>
   </header>
 
@@ -45,7 +45,7 @@
 <fieldset class="qz-q"><legend><span class="qz-n">5</span>Newer home or established neighborhood?</legend><div class="qz-opts"><label class="qz-opt"><input type="radio" name="age" value="newer" required /><span>Newer (2000s and up)</span></label><label class="qz-opt"><input type="radio" name="age" value="established" required /><span>Established, with mature trees</span></label><label class="qz-opt"><input type="radio" name="age" value="either" required /><span>Either is fine</span></label></div></fieldset>
 <fieldset class="qz-q"><legend><span class="qz-n">6</span>Do you want a gated community?</legend><div class="qz-opts"><label class="qz-opt"><input type="radio" name="gate" value="must" required /><span>Yes, it has to be gated</span></label><label class="qz-opt"><input type="radio" name="gate" value="nice" required /><span>Nice to have</span></label><label class="qz-opt"><input type="radio" name="gate" value="no" required /><span>Doesn't matter</span></label></div></fieldset>
 <fieldset class="qz-q"><legend><span class="qz-n">7</span>Where will you drive to most often?</legend><div class="qz-opts"><label class="qz-opt"><input type="radio" name="region" value="strip" required /><span>The Strip or downtown</span></label><label class="qz-opt"><input type="radio" name="region" value="hend" required /><span>Henderson or the airport</span></label><label class="qz-opt"><input type="radio" name="region" value="west" required /><span>Summerlin and the west side</span></label><label class="qz-opt"><input type="radio" name="region" value="sw" required /><span>The southwest, toward I-15 and California</span></label><label class="qz-opt"><input type="radio" name="region" value="north" required /><span>The northwest</span></label><label class="qz-opt"><input type="radio" name="region" value="none" required /><span>No regular commute</span></label></div></fieldset>
-<fieldset class="qz-q"><legend><span class="qz-n">8</span>Are you looking for a 55+ (age-restricted) community?</legend><div class="qz-opts"><label class="qz-opt"><input type="radio" name="senior" value="no" required /><span>No</span></label><label class="qz-opt"><input type="radio" name="senior" value="yes" required /><span>Yes</span></label></div></fieldset>
+<fieldset class="qz-q"><legend><span class="qz-n">8</span>Would you like to include qualifying 55+ (age-restricted) communities?</legend><div class="qz-opts"><label class="qz-opt"><input type="radio" name="senior" value="no" required /><span>No, leave them out</span></label><label class="qz-opt"><input type="radio" name="senior" value="yes" required /><span>Yes, include them</span></label></div></fieldset>
 
         <p id="qz-err" class="qz-err" hidden>Please answer all eight questions.</p>
         <button type="submit" class="btn btn-primary">See my neighborhoods</button>
@@ -55,7 +55,7 @@
         <h2>Your best fits</h2>
         <p class="qz-sub">Based only on the answers you gave and the homes for sale on November 9, 2026. Every neighborhood is open to everyone, and these are starting points, not the only options.</p>
         <div id="qz-list" class="qz-list"></div>
-        <p id="qz-senior" class="guide-callout" hidden>You said you're interested in 55+ communities. See <a href="/retiring-to-las-vegas-henderson">retiring to Las Vegas and Henderson</a> for Sun City Summerlin, Sun City Anthem and others.</p>
+        <p id="qz-senior" class="guide-callout" hidden>You chose to include 55+ communities. Age and occupancy rules are set by each community, so check its rules before you tour. See <a href="/retiring-to-las-vegas-henderson">retiring to Las Vegas and Henderson</a> for Sun City Summerlin, Sun City Anthem and others.</p>
 
         <div class="guide-callout" id="qz-lead">
           <h3 style="margin-top:0">Want the homes for sale in these neighborhoods right now?</h3>
@@ -84,7 +84,7 @@
         <p><button type="button" class="btn btn-outline-dark" id="qz-again">Take the quiz again</button></p>
       </div>
 
-      <p class="guide-sources" style="margin-top:2.5rem">How the numbers work: active single-family listings in the Las Vegas REALTORS® MLS on November 9, 2026, by subdivision or zip code for each area. Single-story share uses each listing's building description; "small yard" means a lot under 5,000 sq ft and "big yard" a lot of 10,000 sq ft or more. Prices change every week, and drive times are typical, outside rush hour. Check schools for any address with the Clark County School District. William Crawford, REALTOR® · Nevada License S.0200576 · Huntington &amp; Ellis, A Real Estate Agency · Equal Housing Opportunity.</p>
+      <p class="guide-sources" style="margin-top:2.5rem">How the numbers work: active single-family listings (asking prices, not sold prices) in the Las Vegas REALTORS® MLS on November 9, 2026, by subdivision or zip code for each area. Single-story share uses each listing's building description; "small yard" means a lot under 5,000 sq ft and "big yard" a lot of 10,000 sq ft or more. Prices change every week, and drive times are typical, outside rush hour. Check schools for any address with the Clark County School District. William Crawford, REALTOR® · Nevada License S.0200576 · Huntington &amp; Ellis, A Real Estate Agency · Based on information from the Las Vegas REALTORS® Multiple Listing Service for the period November 9, 2026 through November 9, 2026. Information is believed reliable but not guaranteed. Equal Housing Opportunity.</p>
     </div>
   </section>
 
@@ -139,7 +139,7 @@
         var d = document.createElement('div'); d.className = 'qz-card';
         var h = document.createElement('h3'); h.textContent = (i + 1) + '. ' + r.ar.name;
         var st = document.createElement('p'); st.className = 'qz-stats';
-        st.textContent = r.inBudget + ' of ' + r.ar.count + ' homes for sale in your budget · middle price ' + money(r.ar.median) + ' · ' + r.ar.single_story_pct + '% single-story';
+        st.textContent = r.inBudget + ' of ' + r.ar.count + ' homes for sale in your budget · median asking price ' + money(r.ar.median) + ' · ' + r.ar.single_story_pct + '% single-story';
         var p = document.createElement('p'); p.textContent = r.ar.about;
         var w = document.createElement('p'); w.className = 'qz-why'; w.textContent = r.why.length ? 'Why it fits: ' + r.why.join(', ') + '.' : '';
         var l = document.createElement('a'); l.href = r.ar.url; l.textContent = 'Read the guide →';
