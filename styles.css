@@ -964,6 +964,7 @@ a { text-decoration: none; color: inherit; }
   }
   .nav-links.open { display: flex; }
   #navbar.menu-open { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .btn { white-space: normal; max-width: 100%; justify-content: center; text-align: center; }
   body.menu-open { overflow: hidden; }
   .nav-links a { font-size: 1rem; color: var(--ink); }
   .hamburger { display: flex; z-index: 1000; }
