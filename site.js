@@ -30,7 +30,7 @@
     <div class="footer-cols">
       <div class="footer-col">
         <a href="/" class="logo" style="margin-bottom:1rem"><span class="logo-name">WILLIAM C.</span> <span class="logo-tag">LUXURY</span></a>
-        <p>William Crawford — Las Vegas &amp; Henderson listing agent marketing homes with cinematic video that reaches hundreds of thousands of buyers.</p>
+        <p>William Crawford — Las Vegas &amp; Henderson listing agent marketing homes with cinematic video on Instagram, TikTok and YouTube.</p>
         <p class="footer-contactline" style="margin-top:0.75rem">Huntington &amp; Ellis, A Real Estate Agency</p>
       </div>
       <div class="footer-col">
