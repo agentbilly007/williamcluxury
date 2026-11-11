@@ -12,7 +12,7 @@
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="nav-links">
         <li><a href="/listings">My Listings</a></li>
-        <li><a href="/buy">Search Homes</a></li>
+        <li><a href="/buy">Buy</a></li>
         <li><a href="/sell">Sell</a></li>
         <li><a href="/neighborhoods">Neighborhoods</a></li>
         <li><a href="/new-construction">New Construction</a></li>
@@ -30,13 +30,13 @@
     <div class="footer-cols">
       <div class="footer-col">
         <a href="/" class="logo" style="margin-bottom:1rem"><span class="logo-name">WILLIAM C.</span> <span class="logo-tag">LUXURY</span></a>
-        <p>William Crawford — Las Vegas &amp; Henderson listing agent marketing homes with cinematic video on Instagram, TikTok and YouTube.</p>
+        <p>William Crawford — Las Vegas &amp; Henderson REALTOR® for buyers and sellers, marketing homes with cinematic video on Instagram, TikTok and YouTube.</p>
         <p class="footer-contactline" style="margin-top:0.75rem">Huntington &amp; Ellis, A Real Estate Agency</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <a href="/listings">My Listings</a>
-        <a href="/buy">Search Homes</a>
+        <a href="/buy">Buy a Home</a>
         <a href="/sell">Sell Your Home</a>
         <a href="/relocation">Relocating to Las Vegas</a>
         <a href="/home-value">Home Value</a>
