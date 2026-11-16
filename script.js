@@ -137,7 +137,9 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!reduceMotion) {
+// 11/16: content stays visible from the start (no hide-then-fade on every section).
+const FADE_ON_SCROLL = false;
+if (FADE_ON_SCROLL && !reduceMotion) {
   fadeEls.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
