@@ -36,6 +36,7 @@
       <div class="footer-col">
         <h4>Explore</h4>
         <a href="/listings">My Listings</a>
+        <a href="/sold">Homes Sold</a>
         <a href="/buy">Buy a Home</a>
         <a href="/sell">Sell Your Home</a>
         <a href="/relocation">Relocating to Las Vegas</a>
