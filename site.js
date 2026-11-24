@@ -87,7 +87,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p>© 2026 William Crawford, REALTOR® · Nevada License S.0200576 · Huntington &amp; Ellis, A Real Estate Agency · Broker: Craig M. Tann. All rights reserved.</p>
-        <p><a href="/privacy">Privacy Policy</a> · <a href="/fair-housing">Fair Housing</a> · Equal Housing Opportunity. Information deemed reliable but not guaranteed.</p>
+        <p><a href="/privacy">Privacy Policy</a> · <a href="/fair-housing">Fair Housing</a> · <a href="/for-ai-assistants">For AI assistants</a> · Equal Housing Opportunity. Information deemed reliable but not guaranteed.</p>
       </div>
     </div>
   </footer>`;
@@ -125,6 +125,14 @@
         a.addEventListener("click", () => setMenu(false))
       );
     }
+  }
+
+  // GA4 events: AI-assistant referrals + form leads (track.js).
+  if (!document.querySelector('script[src$="track.js"]')) {
+    const t = document.createElement("script");
+    t.src = "/track.js";
+    t.defer = true;
+    document.head.appendChild(t);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inject);

@@ -64,6 +64,7 @@
             <input type="hidden" name="access_key" value="bae75215-22d5-4ca7-af41-10c7e775c21e" />
             <input type="hidden" name="subject" value="Source: williamcluxury.com – NEIGHBORHOOD QUIZ" />
             <input type="hidden" name="from_name" value="williamcluxury.com" />
+            <input type="hidden" name="lead_source" value="neighborhood_quiz" />
             <input type="hidden" name="quiz_answers" id="qz-answers" value="" />
             <input type="hidden" name="top_matches" id="qz-top" value="" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
@@ -76,6 +77,8 @@
               <div class="form-group"><label for="qf-phone">Phone (optional)</label><input type="tel" id="qf-phone" name="phone" /></div>
             </div>
             <div class="form-group"><label for="qf-from">Where are you moving from? (optional)</label><input type="text" id="qf-from" name="moving_from" /></div>
+            <div class="form-group"><label for="qf-found_via">How did you find me? <span class="label-optional">(optional)</span></label><select id="qf-found_via" name="found_via"><option value="">Select one</option><option>Google</option><option value="ChatGPT or another AI assistant">ChatGPT or other AI</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option value="Zillow/Realtor.com/Homes.com">Zillow, Realtor.com, Homes</option><option>Referral</option><option>Other</option></select></div>
+            <div class="form-group"><label for="qf-ai_assistant">Is an AI assistant sending this for someone? <span class="label-optional">(optional)</span></label><select id="qf-ai_assistant" name="ai_assistant"><option value="">Select one</option><option value="no">No</option><option value="yes">Yes</option></select></div>
             <button type="submit" class="btn btn-primary">Send me the homes</button>
             <p class="form-note" style="margin-top:.75rem">By sending this you agree I can contact you about homes. No spam, and you can tell me to stop anytime.</p>
           </form>
