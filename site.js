@@ -72,6 +72,7 @@
         <a href="/blog-best-neighborhoods-las-vegas-families">Master-planned communities compared</a>
         <a href="/new-construction">New construction homes in Henderson &amp; Las Vegas</a>
         <a href="/blog-new-construction-las-vegas-2026">New construction: what to know</a>
+        <a href="/las-vegas-housing-market-reports">Monthly market reports</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>

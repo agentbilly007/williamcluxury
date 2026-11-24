@@ -98,6 +98,36 @@
   </section>
 
   <!-- CTA -->
+
+
+
+
+
+  <!--mreport--><section class="section mr-section" id="market-report">
+    <div class="container mr-wrap">
+      <h2>Get the monthly market report</h2>
+      <p>Homes for sale, homes sold, median prices and days on market for your area, from the MLS. One email a month.</p>
+      <p class="mr-links">Read this month's reports: <a href="/las-vegas-housing-market-report">Las Vegas</a> · <a href="/henderson-housing-market-report">Henderson</a> · <a href="/summerlin-housing-market-report">Summerlin</a> · <a href="/north-las-vegas-housing-market-report">North Las Vegas</a> · <a href="/southwest-las-vegas-housing-market-report">Southwest Las Vegas</a> · <a href="/northwest-las-vegas-housing-market-report">Northwest Las Vegas</a> · <a href="/spring-valley-housing-market-report">Spring Valley</a></p>
+      <form class="mr-form" data-mr>
+          <input type="hidden" name="lead_source" value="market_report_signup" />
+          <input type="hidden" name="form_type" value="Market Report Signup" />
+          <input type="hidden" name="signup_page" value="/sell" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="form-row">
+            <div class="form-group"><label for="mr-name">Name</label><input type="text" id="mr-name" name="name" autocomplete="name" required /></div>
+            <div class="form-group"><label for="mr-email">Email</label><input type="email" id="mr-email" name="email" autocomplete="email" required /></div>
+          </div>
+          <div class="form-group"><label for="mr-area">Area</label><select id="mr-area" name="market_area" required><option value="Las Vegas" selected>Las Vegas (whole valley)</option><option value="Henderson">Henderson</option><option value="Summerlin">Summerlin</option><option value="North Las Vegas">North Las Vegas</option><option value="Southwest Las Vegas">Southwest Las Vegas</option><option value="Northwest Las Vegas">Northwest Las Vegas</option><option value="Spring Valley">Spring Valley</option></select></div>
+          <label class="mr-check"><input type="checkbox" name="homeowner" value="yes" /> <span>I own a home here (optional)</span></label>
+          <label class="mr-check"><input type="checkbox" name="consent" value="yes" required /> <span>Email me the monthly market report. I can unsubscribe anytime.</span></label>
+          <button type="submit" class="btn btn-primary">Send me the report</button>
+          <p class="form-note">One email a month with the MLS numbers for the area you pick. <a href="/privacy">Privacy policy</a>.</p>
+          <p class="mr-done" hidden>Thanks, you're on the list. The next report goes out after the numbers update early next month.</p>
+        </form>
+    </div>
+  </section>
+  <script src="market-signup.js" defer></script><!--/mreport-->
+
   <section class="hood-cta-bar">
     <div class="container">
       <h2>What's your home worth today?</h2>
